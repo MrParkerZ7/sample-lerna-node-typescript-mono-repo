@@ -1,0 +1,23 @@
+{
+  "name": "@lerna-ts/sample-common",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf node_modules && rimraf dist && rimraf coverage && rimraf lib",
+    "tsc": "tsc",
+    "tsc:watch": "tsc -watch",
+    "test": "jest --coverage"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^4.6.2"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "description": ""
+}

@@ -1,0 +1,27 @@
+{
+  "extends": ["tslint-config-standard"],
+  "rules": {
+    "no-eval": false,
+    "one-variable-per-declaration": false,
+    "space-before-function-paren": false,
+    "variable-name": false,
+    "trailing-comma": false,
+    "no-unused-expression": false,
+    "curly": false,
+    "one-line": false,
+    "no-empty": false,
+    "ter-indent": false
+  },
+  "jsRules": {
+    "no-var-keyword": true,
+    "space-before-function-paren": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "**/node_modules/**",
+      "**/lib/**",
+      "**/dist/**",
+      "**/coverage/**"
+    ]
+  }
+}

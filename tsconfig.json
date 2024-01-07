@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "outDir": "lib",
+    "rootDir": "src",
+    "target": "ES2022",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noLib": false,
+    "paths": {},
+    "sourceMap": true,
+    "lib": ["ES2022"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/**/*.spec.ts"]
+}

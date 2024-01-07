@@ -1,0 +1,55 @@
+{
+  "name": "@lerna-ts/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "engines": {
+    "node": ">=18.0.0 <=20.10.0"
+  },
+  "scripts": {
+    "diff": "lerna diff",
+    "setup": "yarn install && yarn lerna bootstrap && yarn lerna link && yarn lerna run setup --include-dependencies --stream && yarn tsc",
+    "clean": "yarn lerna run clean --include-dependencies --stream && lerna clean -y && rimraf node_modules",
+    "clean:cache": "yarn cache clean ",
+    "prettier": "prettier --check \"**/*.ts\" \"**/*.js\"",
+    "prettier:fix": "prettier --write \"**/*.ts\" \"**/*.js\"",
+    "lint:test": "tslint -c ./tslint.json -c ./tslint.test.json **/*.ts **/*.js",
+    "lint:test:fix": "tslint -c ./tslint.json -c ./tslint.test.json **/*.ts **/*.js --fix",
+    "lint:src": "tslint -c ./tslint.json src/**/*.ts **/*.js",
+    "lint:src:fix": "tslint -c ./tslint.json src/**/*.ts **/*.js --fix",
+    "lint": "yarn lint:test && yarn lint:src",
+    "lint:fix": "yarn lint:test:fix && yarn lint:src:fix",
+    "format": "yarn lint && yarn prettier",
+    "format:fix": "yarn lint:fix && yarn prettier:fix",
+    "link": " lerna bootstrap && yarn lerna link",
+    "link:force": "yarn lerna bootstrap --force-local && yarn lerna link --force-local",
+    "reset": "yarn clean && yarn setup",
+    "start:local": "yarn lerna run start:local --include-dependencies --stream",
+    "start:dev": "yarn lerna run start:dev --include-dependencies --stream",
+    "start:qa": "yarn lerna run start:qa --include-dependencies --stream",
+    "start:prod": "yarn lerna run start:prod --include-dependencies --stream",
+    "tsc": "yarn lerna run tsc --include-dependencies --stream",
+    "tsc:watch": "yarn lerna run tsc:watch --include-dependencies --stream",
+    "test": "yarn lerna run test --include-dependencies --stream",
+    "packages": "yarn setup && yarn format && yarn test",
+    "re-packages": "yarn clean && yarn packages"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@types/jest": "^27.4.0",
+    "@types/mocha": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "jest": "^27.5.1",
+    "lerna": "^6.6.0",
+    "prettier": "^2.8.7",
+    "ts-jest": "^27.1.3",
+    "tslint": "^6.1.3",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^4.5.5"
+  },
+  "packages": [
+    "packages/*"
+  ],
+  "dependencies": {}
+}
