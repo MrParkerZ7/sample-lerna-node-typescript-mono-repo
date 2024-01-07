@@ -1,1 +1,1 @@
-export const sampleFunction = (msg: string) => `SampleFunction Print :: ${msg}`
+export { sampleFunction } from '@lerna-ts/sample-common'

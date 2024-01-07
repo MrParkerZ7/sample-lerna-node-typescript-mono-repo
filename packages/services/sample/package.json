@@ -12,7 +12,7 @@
   "author": "",
   "license": "UNLICENSED",
   "dependencies": {
-    "@unilerna-ts/sample-common": "^1.0.0"
+    "@lerna-ts/sample-common": "^1.0.0"
   },
   "devDependencies": {
     "jest": "^27.5.1",
